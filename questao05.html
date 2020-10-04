@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Questão 05</title>
+    
+</head>
+<body>
+    <form id="formulario">
+    <fieldset>
+    	<legend>Calcular media e conceito final</legend>
+    	<label for="a">Aluno:</label>
+        <input name="a" type="text" />
+        <br><br>
+        <label for="n1">Nota 1:</label>
+        <input name="n1" type="text" />
+        <br><br>
+        <label for="n2">Nota 2:</label>
+        <input name="n2" type="text" />
+        <br><br>
+        <label for="n3">Nota 3:</label>
+        <input name="n3" type="text" />
+        <br><br>
+        <a href="#" onclick="calcular();">Calcular</a>
+        <br>
+        <p id="frase" name="frase"></p>
+    </fieldset>
+    </form>
+</body>
+<script type="text/javascript">
+    function calcular(){
+        var formulario = document.getElementById("formulario");		
+            
+        var a 		= formulario.a.value;
+        var n1 		= +formulario.n1.value;
+        var n2 		= +formulario.n2.value;
+        var n3 		= +formulario.n3.value;
+
+        var media = (n1+n2+n3)/3;
+
+        var result = "";
+
+        if(media>=6){
+            result = a + " foi aprovado com média " + media.toFixed(3);
+        } else if(media>=4){
+            result = a + " ficou na recuperação final com média " + media.toFixed(3);
+        } else if(media<4){
+            result = a + " foi reprovado com média " + media.toFixed(3);
+        }
+
+        document.getElementById("frase").innerHTML=result;
+    }
+</script>
+</html>

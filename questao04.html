@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Questão 04</title>
+    
+</head>
+<body>
+    <form id="formulario">
+    <fieldset>
+    	<legend>Calcular velocidade media</legend>
+    	
+        <label for="e">Espaço percorrido (km):</label>
+        <input name="e" type="text" />
+        <br><br>
+        <label for="t">Tempo para percorrer o espaço (h):</label>
+        <input name="t" type="text" />
+        <br><br>
+        <a href="#" onclick="calcular();">Calcular</a>
+        <br><br>
+        <label for="result">Velocidade media (km/h):</label>
+        <input name="result" type="text" disabled="disabled" />
+    </fieldset>
+    </form>
+</body>
+<script type="text/javascript">
+    function calcular(){
+        var formulario = document.getElementById("formulario");		
+            
+        var e  		= +formulario.e.value;
+        var t  		= +formulario.t.value;
+         
+        var result = e/t;
+        
+        formulario.result.value = result.toFixed(3);
+    }
+</script>
+</html>

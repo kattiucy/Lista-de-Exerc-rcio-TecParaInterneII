@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Questão 09</title>
+    
+</head>
+<body>
+    <form id="formulario">
+    <fieldset>
+    	<legend>Calcular combustivel mais vantajoso</legend>
+    	
+        <label for="ga">Preço da gasolina:</label>
+        <input name="ga" type="text" />
+        <br><br>
+        <label for="al">Preço do alcool:</label>
+        <input name="al" type="text" />
+        <br><br>
+        <a href="#" onclick="calcular();">Calcular</a>
+        <br><br>
+        <label for="result">O combustivel mais vantajoso é:</label>
+        <input name="result" type="text" disabled="disabled" />
+    </fieldset>
+    </form>
+</body>
+<script type="text/javascript">
+    function calcular(){
+        var formulario = document.getElementById("formulario");		
+            
+        var ga  		= +formulario.ga.value;
+        var al 		= +formulario.al.value;
+         
+        var valor = ga * 0.3;
+        var result;
+
+        if(al<=valor){
+            result = "Alcool";
+        }else{
+            result = "Gasolina";
+        }
+        
+        formulario.result.value = result;
+    }
+</script>
+</html>

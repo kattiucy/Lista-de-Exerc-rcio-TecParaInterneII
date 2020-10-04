@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Questão 07</title>
+    
+</head>
+<body>
+    <form id="formulario">
+    <fieldset>
+    	<legend>Calcular temperatura de Farenheit para Celsius</legend>
+    	
+        <label for="f">Temperatura em Farenheit:</label>
+        <input name="f" type="text" />
+        <br><br>
+        <a href="#" onclick="calcular();">Calcular</a>
+        <br><br>
+        <label for="result">Temperatura em Celsius:</label>
+        <input name="result" type="text" disabled="disabled" />
+    </fieldset>
+    </form>
+</body>
+<script type="text/javascript">
+    function calcular(){
+        var formulario = document.getElementById("formulario");		
+            
+        var f  		= +formulario.f.value;
+         
+        var c = (5*(f-32)/9);
+        
+        formulario.result.value = c.toFixed(3);
+    }
+</script>
+</html>

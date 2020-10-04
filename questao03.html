@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Questão 03</title>
+    
+</head>
+<body>
+    <form id="formulario">
+    <fieldset>
+    	<legend>Calcular conceito baseado na nota</legend>
+    	
+        <label for="n">Nota:</label>
+        <input name="n" type="text" />
+        <br><br>
+        <a href="#" onclick="calcular();">Calcular</a>
+        <br><br>
+        <label for="result">Conceito:</label>
+        <input name="result" type="text" disabled="disabled" />
+    </fieldset>
+    </form>
+</body>
+<script type="text/javascript">
+    function calcular(){
+        var formulario = document.getElementById("formulario");		
+            
+        var n 		= +formulario.n.value;
+         
+        var result;
+
+        if(n>=9){
+            result = "A";
+        }else if(n>=7){
+            result = "B";
+        }else if(n>=5){
+            result = "C";
+        }else if(n>=4.5){
+            result = "D";
+        }else if(n<4.5){
+            result = "F";
+        }
+        
+        formulario.result.value = result;
+    }
+</script>
+</html>

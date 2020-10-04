@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Questão 06</title>
+    
+</head>
+<body>
+    <form id="formulario">
+    <fieldset>
+    	<legend>Calcular preço final do produto</legend>
+    	
+        <label for="preco">Preço do produto:</label>
+        <input name="preco" type="text" />
+        <br><br>
+        <label for="preco">Metodo de pagamento:</label>
+        <select name="pagamento">
+            <option value="1" selected>A vista</option> 
+            <option value="3">3 vezes</option>
+            <option value="5">5 vezes</option>
+        </select>
+        <br><br>
+        <a href="#" onclick="calcular();">Calcular</a>
+        <br><br>
+        <label for="final">Valor final do produto:</label>
+        <input name="final" type="text" disabled="disabled" />
+        <br><br>
+        <label for="parcela">Valor de cada parcela:</label>
+        <input name="parcela" type="text" disabled="disabled" />
+    </fieldset>
+    </form>
+</body>
+<script type="text/javascript">
+    function calcular(){
+        var formulario = document.getElementById("formulario");		
+            
+        var preco  		= +formulario.preco.value;
+        var pagamento  		= +formulario.pagamento.value;
+         
+        var final;
+        var parcela;
+
+        if(pagamento == 1){
+            final = preco - (preco*0.05);
+            parcela = final;
+        } else if (pagamento == 3) {
+            final = preco + (preco*0.1);
+            parcela = final/3;
+        } else if (pagamento == 5) {
+            final = preco + (preco*0.2);
+            parcela = final/5;
+        }
+        
+        formulario.final.value = final.toFixed(3);
+        formulario.parcela.value = parcela.toFixed(3);
+
+    }
+</script>
+</html>
